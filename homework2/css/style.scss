@@ -1,0 +1,456 @@
+/* 若你有使用到中文需要的編碼宣告 */
+@charset "utf-8";
+
+/* 文件開頭說明 */
+/*
+ * Page name
+ * Copyright 2020
+ * Author
+ * Licensed
+*/
+
+/* 目錄、區段的註解 */
+/* -------------------------- *\
+	Content
+\* -------------------------- */
+/**
+ * Content .............. You are reading it!
+ * Global .............. Set common styles
+ * Layout .............. Set grid
+ * Components .............. Set components styles
+ * Pages .............. Set different page styles
+ * Utility .............. Set utility tools
+ */
+
+/* -------------------------- *\
+	Global
+\* -------------------------- */
+
+// /變數顏色/
+$bgc--default: #f3f4f5;
+$bgc--primary: #022873;
+$bgc--secondary: #f2bb13;
+
+$bgc--positive: #f2a516;
+$bgc--negative: #f24405;
+$bgc--alert: #f25d50;
+
+//中性色
+$bgc--black: #151730;
+$bgc--dark-grey-1: #40414f;
+$bgc--dark-grey-2: #686c71;
+$bgc--light-grey-1: #b2bac4;
+$bgc--light-grey-2: #dadfe4;
+$bgc--white: #fbfbfb;
+
+//color
+$color--default: #f3f4f5;
+$color--primary: #022873;
+$color--secondary: #f2bb13;
+
+$color--positive: #f2a516;
+$color--negative: #f24405;
+$color--alert: #f25d50;
+
+//中性色
+$color--black: #151730;
+$color--dark-grey-1: #40414f;
+$color--dark-grey-2: #686c71;
+$color--light-grey-1: #b2bac4;
+$color--light-grey-2: #dadfe4;
+$color--white: #fbfbfb;
+
+$color-array: (
+  default: $bgc--default,
+  primary: $bgc--primary,
+  secondary: $bgc--secondary,
+  positive: $bgc--positive,
+  negative: $bgc--negative,
+  alert: $bgc--alert,
+  dark: $bgc--black,
+  dark-grey-1: $bgc--dark-grey-1,
+  dark-grey-2: $bgc--dark-grey-2,
+  light-grey-1: $bgc--light-grey-1,
+  light-grey-2: $bgc--light-grey-2,
+  pure-white: $bgc--white,
+);
+
+@each $key, $value in $color-array {
+  .bgc--#{$key} {
+    background-color: $value;
+  }
+  .color--#{$key} {
+    color: $value;
+  }
+  .is-hover-#{$key} {
+    background-color: lighten($value, 5%) !important;
+  }
+  .is-active-#{$key} {
+    background-color: darken($value, 15%) !important;
+  }
+}
+
+/* -------------------------- *\
+	Components
+\* -------------------------- */
+.title {
+  text-align: left;
+  color: #fbfbfb;
+}
+
+/* btn */
+.btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  // border: 1px solid black;
+  background-color: $bgc--default;
+  color: $color--primary;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  user-select: none;
+
+  display: inline-block;
+  vertical-align: top;
+  &-lg {
+    padding: 15px 18px;
+  }
+  &-sm {
+    padding: 5px 10px;
+  }
+}
+
+$btnComponent: (
+  primary: (
+    class: "primary",
+    color: $color--white,
+    bgcolor: $bgc--primary,
+  ),
+  secondary: (
+    class: "secondary",
+    color: $color--white,
+    bgcolor: $bgc--secondary,
+  ),
+  positive: (
+    class: "positive",
+    color: $color--white,
+    bgcolor: $bgc--positive,
+  ),
+  negative: (
+    class: "negative",
+    color: $color--white,
+    bgcolor: $bgc--negative,
+  ),
+  alert: (
+    class: "alert",
+    color: $color--white,
+    bgcolor: $bgc--alert,
+  ),
+);
+
+@each $name, $value in $btnComponent {
+  $class: map-get($value, class);
+  $color: map-get($value, color);
+  $bgcolor: map-get($value, bgcolor);
+  .btn-#{$class} {
+    color: $color;
+    background-color: $bgcolor;
+    border-bottom: 0px solid $bgcolor;
+    &:hover {
+      background: lighten($bgcolor, 5%);
+      border-bottom: 8px solid darken($bgcolor, 15%);
+      transform: translate(0, -8px);
+    }
+    &:active {
+      background: darken($bgcolor, 15%);
+      transform: translate(0, 0px);
+      border-bottom: 0px solid darken($bgcolor, 15%);
+      transition: all 0.5s;
+    }
+  }
+}
+.btnGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.is-disabled {
+  pointer-events: none;
+  cursor: default;
+  background-color: #686c71;
+  opacity: 0.6;
+}
+
+//SOCIAL
+.btnGroup__SOCIAL {
+  // border: 1px solid $bgc--primary;
+  display: inline-block;
+  color: $bgc--primary;
+  cursor: pointer;
+  i {
+    padding: 15px;
+    &:hover {
+      color: lighten($bgc--primary, 50%);
+    }
+    &:active {
+      color: darken($bgc--primary, 50%);
+    }
+  }
+}
+
+/* card */
+.card {
+  width: 100%;
+  background-color: $bgc--white;
+  border-radius: 8px;
+  // overflow: hidden;
+}
+
+//colorPalette
+.colorPalette {
+  padding-top: 100%;
+}
+
+//TYPOGRAPHY
+h1,
+.h1 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.35em;
+}
+
+h2,
+.h2 {
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.3em;
+}
+
+h3,
+.h3 {
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.2em;
+}
+
+h4,
+.h4 {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1em;
+}
+
+h5,
+.h5 {
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1em;
+}
+h6,
+.h6 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1em;
+}
+.para {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  // border: 1px solid black;
+  min-height: 64px;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.11) 0px 4px 6px, rgba(0, 0, 0, 0.8) 0px 1px 3px;
+  .navbar__logo {
+    align-self: center;
+
+    background-image: url(../img/logo-fotor-bg-remover-2023121421312.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0%;
+    margin-left: 16px;
+    width: 64px;
+    height: 64px;
+    //藏字
+    white-space: nowrap;
+    text-indent: 100%;
+    overflow: hidden;
+  }
+  .navbar__search-group {
+    // display: inline-flex;
+    align-self: center;
+    .navbar__search {
+      width: 10em;
+      height: 32px;
+      display: inline-flex;
+      align-self: center;
+      margin-right: 8px;
+      border-radius: 4px;
+    }
+  }
+
+  .btn__order {
+    align-self: center;
+    margin: 0;
+  }
+  .navbar__nav {
+    .nav__item {
+      display: inline-flex;
+      .nav__link {
+        display: block;
+        color: #40414f;
+        padding: 20px 16px;
+        line-height: 24px;
+        font-size: 16px;
+        font-weight: 400;
+        &:hover {
+          color: $color--negative;
+        }
+      }
+    }
+  }
+}
+
+//jumbotron
+.jumbotron {
+  padding-top: 320px;
+  padding-bottom: 240px;
+  // border: 1px solid black;
+  background-image: url(../img/BTN\ R角失效.PNG);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  &--text-center {
+    text-align: center;
+  }
+}
+.text-range {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 25%;
+  height: 25%;
+  border-radius: 8px;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 8px;
+  .img-container {
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-top: 75%;
+      background-color: rgb(62, 207, 142);
+    }
+    .image {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+.card__body {
+  padding: 0 16px;
+  .card__title {
+    font-size: 25px;
+    margin: 16px 0;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    .price {
+      color: $color--alert;
+    }
+  }
+  .card__para {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 16px;
+
+    line-height: 32px;
+    height: 64px;
+    overflow: hidden;
+  }
+}
+
+.footer {
+  border: 1px solid black;
+  padding-top: 90px;
+  box-shadow: rgba(50, 50, 93, 0.11) 0px -4px 6px;
+  background-color: $bgc--primary;
+  color: $color--default;
+  .btnGroup__SOCIAL {
+    color: $color--secondary;
+  }
+}
+
+.contact__info {
+  margin-bottom: 24px;
+  .contact-info__item {
+    padding-left: 32px;
+    margin-bottom: 8px;
+    // border: 1px solid wheat;
+    i {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .footer__info {
+    .footer__link {
+      color: $color--default;
+    }
+  }
+}
+.footer {
+  border-bottom: 1px solid black;
+  .navbar {
+    background-color: $bgc--primary;
+    box-shadow: none;
+    .nav__item {
+      .nav__link {
+        color: $bgc--default;
+      }
+    }
+  }
+  .copyright {
+    border-top: 1px solid $bgc--light-grey-1;
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 32px;
+    padding-bottom: 24px;
+    .copyright__text {
+      font-size: 16px;
+      font-weight: 300;
+    }
+  }
+}
+/* -------------------------- *\
+	Pages
+\* -------------------------- */
+/* homepage */
+
+/* about */
+
+/* -------------------------- *\
+	Utility
+\* -------------------------- */
+.clearfix {
+  clear: both;
+}

@@ -1,0 +1,471 @@
+@charset "UTF-8";
+/* 若你有使用到中文需要的編碼宣告 */
+/* 文件開頭說明 */
+/*
+ * Page name
+ * Copyright 2020
+ * Author
+ * Licensed
+*/
+/* 目錄、區段的註解 */
+/* -------------------------- *\
+	Content
+\* -------------------------- */
+/**
+ * Content .............. You are reading it!
+ * Global .............. Set common styles
+ * Layout .............. Set grid
+ * Components .............. Set components styles
+ * Pages .............. Set different page styles
+ * Utility .............. Set utility tools
+ */
+/* -------------------------- *\
+	Global
+\* -------------------------- */
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
+body {
+  font-family: "微軟正黑體";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mask-dark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* -------------------------- *\
+	Layout
+\* -------------------------- */
+.hero {
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+.hero-bgc-blue {
+  background-color: #b2d4e9;
+}
+.hero-bgc-grey {
+  background-color: rgba(215, 222, 228, 0.8901960784);
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+/* -------------------------- *\
+	Components
+\* -------------------------- */
+/* img */
+.images__container {
+  width: 100%;
+}
+.images__container::before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 75%;
+}
+.images__container .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* btn */
+.btn {
+  padding: 8px 16px;
+  border: 1px solid #428c5c;
+  border-radius: 8px;
+  color: #f3f4f5;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #428c5c;
+}
+.btn:hover {
+  background-color: #3a7b51;
+  border-bottom: 4px solid #285939;
+  transform: translateY(-1px);
+}
+.btn:active {
+  border-bottom: 1px solid #285939;
+  transform: translateY(0px);
+}
+.btn-lg {
+  padding: 20px 16px;
+}
+
+/* navbar */
+.navbar {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: rgba(217, 168, 78, 0.5);
+  line-height: 64px;
+  position: fixed;
+  z-index: 555;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar .navbar__logo__link {
+  width: 120px;
+  height: 64px;
+  background-image: url(../img/logo-fotor-bg-remover-2023121421312.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.navbar .navbar__logo__link h1 {
+  white-space: nowrap;
+  text-indent: 100%;
+  overflow: hidden;
+}
+
+.navbar__nav .nav__item {
+  float: left;
+}
+.navbar__nav .nav__item .nav__item__link {
+  padding: 20px 16px;
+  display: block;
+  line-height: 24px;
+  color: #f3f4f5;
+}
+.navbar__nav .nav__item .nav__item__link:hover {
+  color: #428c5c;
+}
+
+/* jumbotron */
+.jumbotron {
+  padding-top: 224px;
+  padding-bottom: 160px;
+  background-image: url(../img/pexels-daniel-reche-1556679.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.jumbotron__area {
+  width: 400px;
+  left: 50%;
+}
+.jumbotron__area .jumbotron__title {
+  font-size: 40px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #fefefe;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+.jumbotron__area .jumbotron__para {
+  font-size: 20px;
+  font-weight: 400;
+  color: #fefefe;
+  margin-bottom: 24px;
+  text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron__area {
+    width: 320px;
+    height: 100%;
+    left: 0%;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .jumbotron__area .jumbotron__title {
+    font-size: 32px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: #fefefe;
+    line-height: 36px;
+    margin-bottom: 16px;
+  }
+  .jumbotron__area .jumbotron__para {
+    height: 72px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fefefe;
+    margin-bottom: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    text-align: justify;
+  }
+}
+/* About */
+.about__preview .about__title {
+  margin-top: 120px;
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+.about__preview .about__para {
+  font-size: 16px;
+  margin-bottom: 24px;
+  text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+  .about__preview .about__title {
+    margin-top: 80px;
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+  .about__preview .about__para {
+    font-size: 14px;
+    margin-bottom: 24px;
+    text-align: justify;
+  }
+}
+/*SERVICES*/
+.services__intro {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.services__intro .services__title {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+.services__intro .services__para {
+  font-size: 16px;
+  line-height: 32px;
+}
+
+.services__item .services__image {
+  background-size: cover;
+  background-position: bottom;
+  margin-bottom: 8px;
+}
+.services__item .services__heading {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.services__item .services__subHeading {
+  font-size: 16px;
+  color: #285939;
+  margin-bottom: 8px;
+  white-space: nowrap;
+}
+.services__item .services__para {
+  font-size: 14px;
+  line-height: 24px;
+  text-align: justify;
+  margin-bottom: 8px;
+  height: 72px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 992px) {
+  .services__item .services__image {
+    background-size: cover;
+    background-position: bottom;
+    margin-bottom: 8px;
+  }
+  .services__item .services__heading {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  .services__item .services__subHeading {
+    font-size: 16px;
+    color: #285939;
+    margin-bottom: 8px;
+  }
+  .services__item .services__para {
+    font-size: 14px;
+    line-height: 24px;
+    text-align: justify;
+    margin-bottom: 8px;
+    height: 48px;
+    overflow: hidden;
+  }
+  .services__item .btn {
+    margin-bottom: 16px;
+  }
+}
+/* reservation */
+.reservation___images {
+  background-image: url(../img/pexels-george-dolgikh-1303098.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* menu */
+.menu__intro {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.menu__intro .menu__title {
+  border-left: 4px solid #428c5c;
+  border-radius: 4px;
+  padding-left: 16px;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.menu__item .menu__img {
+  background-size: cover;
+}
+.menu__item .menu__heading {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.menu__item .menu__para {
+  font-size: 16px;
+  margin-bottom: 8px;
+  height: 64px;
+}
+.menu__item .menu__price {
+  font-size: 20px;
+}
+.menu__item .menu__price span {
+  color: #d92e1e;
+}
+
+.menu-group {
+  margin-bottom: 32px;
+}
+.menu-group:last-child {
+  margin-bottom: 0px;
+}
+.menu-group .btn-for-md {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .menu__intro {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .menu__intro .menu__title {
+    border-left: 4px solid #428c5c;
+    border-radius: 4px;
+    padding-left: 16px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .menu__intro .btn {
+    visibility: hidden;
+  }
+  .menu__item .menu__para {
+    height: 48px;
+  }
+  .menu__item .menu__price {
+    margin-bottom: 16px;
+  }
+  .menu-group .btn-for-md {
+    visibility: visible;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+/* CONTACT */
+.contact__info {
+  font-size: 24px;
+  font-weight: 400;
+}
+.contact__info .contact__title {
+  display: inline-block;
+  border-bottom: 2px solid #428c5c;
+  margin-bottom: 16px;
+  color: #d9a84e;
+}
+.contact__info .contact__phone {
+  display: block;
+  margin-bottom: 16px;
+}
+.contact__info .contact__address {
+  margin-bottom: 24px;
+}
+
+.btnGroup__SOCIAL {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+}
+.btnGroup__SOCIAL i {
+  margin-left: 16px;
+  text-align: left;
+}
+.btnGroup__SOCIAL i:hover {
+  color: #428c5c;
+}
+
+/* footer */
+.footer {
+  padding-top: 224px;
+  padding-bottom: 160px;
+  background-image: url(../img/pexels-karolina-grabowska-5725884.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.footer .navbar {
+  background-color: rgba(244, 222, 225, 0);
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+.footer .navbar .nav__item .nav__item__link {
+  color: #f3f4f5;
+  font-size: 24px;
+}
+.footer .navbar .nav__item .nav__item__link:hover {
+  color: #428c5c;
+}
+
+.copyright {
+  padding: 24px 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  color: #f1ecec;
+}
+
+/* -------------------------- *\
+	Pages
+\* -------------------------- */
+/* -------------------------- *\
+	Utility
+\* -------------------------- */
+.mask-dark {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}/*# sourceMappingURL=style.css.map */

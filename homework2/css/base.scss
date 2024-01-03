@@ -1,0 +1,149 @@
+/* 若你有使用到中文需要的編碼宣告 */
+@charset "utf-8";
+
+/* 文件開頭說明 */
+/*
+ * Page name
+ * Copyright 2020
+ * Author
+ * Licensed
+*/
+/* 目錄、區段的註解 */
+/* -------------------------- *\
+	Content
+\* -------------------------- */
+/**
+ * Content .............. You are reading it!
+ * Global .............. Set common styles
+ * Layout .............. Set grid
+ * Components .............. Set components styles
+ * Pages .............. Set different page styles
+ * Utility .............. Set utility tools
+ */
+
+/* -------------------------- *\
+	Global
+\* -------------------------- */
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
+body {
+  font-family: "Montserrat", "Noto Sans TC", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #40414f;
+  background-color: #fff;
+}
+// /變數顏色/
+$bgc--default: #f3f4f5;
+$bgc--primary: #022873;
+$bgc--secondary: #f2bb13;
+
+$bgc--positive: #f2a516;
+$bgc--negative: #f24405;
+$bgc--alert: #f25d50;
+
+//中性色
+$bgc--black: #151730;
+$bgc--dark-grey-1: #40414f;
+$bgc--dark-grey-2: #686c71;
+$bgc--light-grey-1: #b2bac4;
+$bgc--light-grey-2: #dadfe4;
+$bgc--white: #fbfbfb;
+
+$color-array: (
+  default: $bgc--default,
+  primary: $bgc--primary,
+  secondary: $bgc--secondary,
+  positive: $bgc--positive,
+  negative: $bgc--negative,
+  alert: $bgc--alert,
+  dark: $bgc--black,
+  dark-grey-1: $bgc--dark-grey-1,
+  dark-grey-2: $bgc--dark-grey-2,
+  light-grey-1: $bgc--light-grey-1,
+  light-grey-2: $bgc--light-grey-2,
+  pure-white: $bgc--white,
+);
+
+@each $key, $value in $color-array {
+  .bgc--#{$key} {
+    background-color: $value;
+  }
+}
+
+@each $key, $value in $color-array {
+  .color--#{$key} {
+    color: $value;
+  }
+}
+
+//文字基礎設定
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+//ul .li a設定
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* -------------------------- *\
+      Layout
+  \* -------------------------- */
+
+// margin
+$margin: 4px, 8px, 12px, 16px, 20px, 24px, 28px, 32px, 36px, 40px, 44px, 48px;
+@each $size in $margin {
+  .u-margin-#{$size} {
+    margin: $size;
+  }
+  .u-mt-#{$size} {
+    margin-top: $size;
+  }
+  .u-mb-#{$size} {
+    margin-bottom: $size;
+  }
+  .u-ml-#{$size} {
+    margin-left: $size;
+  }
+  .u-mr-#{$size} {
+    margin-right: $size;
+  }
+}
+// padding
+$padding: 4px, 8px, 12px, 16px, 20px, 24px, 28px, 32px, 36px, 40px, 44px, 48px;
+@each $size in $padding {
+  .u-padding-#{$size} {
+    padding: $size;
+  }
+  .u-pt-#{$size} {
+    padding-top: $size;
+  }
+  .u-pb-#{$size} {
+    padding-bottom: $size;
+  }
+  .u-pl-#{$size} {
+    padding-left: $size;
+  }
+  .u-pr-#{$size} {
+    padding-right: $size;
+  }
+}
+/* -------------------------- *\
+	Components
+\* -------------------------- */

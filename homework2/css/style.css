@@ -1,0 +1,595 @@
+@charset "UTF-8";
+/* 若你有使用到中文需要的編碼宣告 */
+/* 文件開頭說明 */
+/*
+ * Page name
+ * Copyright 2020
+ * Author
+ * Licensed
+*/
+/* 目錄、區段的註解 */
+/* -------------------------- *\
+	Content
+\* -------------------------- */
+/**
+ * Content .............. You are reading it!
+ * Global .............. Set common styles
+ * Layout .............. Set grid
+ * Components .............. Set components styles
+ * Pages .............. Set different page styles
+ * Utility .............. Set utility tools
+ */
+/* -------------------------- *\
+	Global
+\* -------------------------- */
+.bgc--default {
+  background-color: #f3f4f5;
+}
+
+.color--default {
+  color: #f3f4f5;
+}
+
+.is-hover-default {
+  background-color: white !important;
+}
+
+.is-active-default {
+  background-color: #c9ced2 !important;
+}
+
+.bgc--primary {
+  background-color: #022873;
+}
+
+.color--primary {
+  color: #022873;
+}
+
+.is-hover-primary {
+  background-color: #02318c !important;
+}
+
+.is-active-primary {
+  background-color: #010e28 !important;
+}
+
+.bgc--secondary {
+  background-color: #f2bb13;
+}
+
+.color--secondary {
+  color: #f2bb13;
+}
+
+.is-hover-secondary {
+  background-color: #f3c22b !important;
+}
+
+.is-active-secondary {
+  background-color: #af860a !important;
+}
+
+.bgc--positive {
+  background-color: #f2a516;
+}
+
+.color--positive {
+  color: #f2a516;
+}
+
+.is-hover-positive {
+  background-color: #f3ae2e !important;
+}
+
+.is-active-positive {
+  background-color: #b2770a !important;
+}
+
+.bgc--negative {
+  background-color: #f24405;
+}
+
+.color--negative {
+  color: #f24405;
+}
+
+.is-hover-negative {
+  background-color: #fa5316 !important;
+}
+
+.is-active-negative {
+  background-color: #a72f03 !important;
+}
+
+.bgc--alert {
+  background-color: #f25d50;
+}
+
+.color--alert {
+  color: #f25d50;
+}
+
+.is-hover-alert {
+  background-color: #f47368 !important;
+}
+
+.is-active-alert {
+  background-color: #e52211 !important;
+}
+
+.bgc--dark {
+  background-color: #151730;
+}
+
+.color--dark {
+  color: #151730;
+}
+
+.is-hover-dark {
+  background-color: #1d2042 !important;
+}
+
+.is-active-dark {
+  background-color: black !important;
+}
+
+.bgc--dark-grey-1 {
+  background-color: #40414f;
+}
+
+.color--dark-grey-1 {
+  color: #40414f;
+}
+
+.is-hover-dark-grey-1 {
+  background-color: #4b4d5d !important;
+}
+
+.is-active-dark-grey-1 {
+  background-color: #1e1e25 !important;
+}
+
+.bgc--dark-grey-2 {
+  background-color: #686c71;
+}
+
+.color--dark-grey-2 {
+  color: #686c71;
+}
+
+.is-hover-dark-grey-2 {
+  background-color: #74797e !important;
+}
+
+.is-active-dark-grey-2 {
+  background-color: #434649 !important;
+}
+
+.bgc--light-grey-1 {
+  background-color: #b2bac4;
+}
+
+.color--light-grey-1 {
+  color: #b2bac4;
+}
+
+.is-hover-light-grey-1 {
+  background-color: #c0c7cf !important;
+}
+
+.is-active-light-grey-1 {
+  background-color: #8793a3 !important;
+}
+
+.bgc--light-grey-2 {
+  background-color: #dadfe4;
+}
+
+.color--light-grey-2 {
+  color: #dadfe4;
+}
+
+.is-hover-light-grey-2 {
+  background-color: #e9ecef !important;
+}
+
+.is-active-light-grey-2 {
+  background-color: #aeb9c4 !important;
+}
+
+.bgc--pure-white {
+  background-color: #fbfbfb;
+}
+
+.color--pure-white {
+  color: #fbfbfb;
+}
+
+.is-hover-pure-white {
+  background-color: white !important;
+}
+
+.is-active-pure-white {
+  background-color: #d5d5d5 !important;
+}
+
+/* -------------------------- *\
+	Components
+\* -------------------------- */
+.title {
+  text-align: left;
+  color: #fbfbfb;
+}
+
+/* btn */
+.btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #f3f4f5;
+  color: #022873;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: inline-block;
+  vertical-align: top;
+}
+.btn-lg {
+  padding: 15px 18px;
+}
+.btn-sm {
+  padding: 5px 10px;
+}
+
+.btn-primary {
+  color: #fbfbfb;
+  background-color: #022873;
+  border-bottom: 0px solid #022873;
+}
+.btn-primary:hover {
+  background: #02318c;
+  border-bottom: 8px solid #010e28;
+  transform: translate(0, -8px);
+}
+.btn-primary:active {
+  background: #010e28;
+  transform: translate(0, 0px);
+  border-bottom: 0px solid #010e28;
+  transition: all 0.5s;
+}
+
+.btn-secondary {
+  color: #fbfbfb;
+  background-color: #f2bb13;
+  border-bottom: 0px solid #f2bb13;
+}
+.btn-secondary:hover {
+  background: #f3c22b;
+  border-bottom: 8px solid #af860a;
+  transform: translate(0, -8px);
+}
+.btn-secondary:active {
+  background: #af860a;
+  transform: translate(0, 0px);
+  border-bottom: 0px solid #af860a;
+  transition: all 0.5s;
+}
+
+.btn-positive {
+  color: #fbfbfb;
+  background-color: #f2a516;
+  border-bottom: 0px solid #f2a516;
+}
+.btn-positive:hover {
+  background: #f3ae2e;
+  border-bottom: 8px solid #b2770a;
+  transform: translate(0, -8px);
+}
+.btn-positive:active {
+  background: #b2770a;
+  transform: translate(0, 0px);
+  border-bottom: 0px solid #b2770a;
+  transition: all 0.5s;
+}
+
+.btn-negative {
+  color: #fbfbfb;
+  background-color: #f24405;
+  border-bottom: 0px solid #f24405;
+}
+.btn-negative:hover {
+  background: #fa5316;
+  border-bottom: 8px solid #a72f03;
+  transform: translate(0, -8px);
+}
+.btn-negative:active {
+  background: #a72f03;
+  transform: translate(0, 0px);
+  border-bottom: 0px solid #a72f03;
+  transition: all 0.5s;
+}
+
+.btn-alert {
+  color: #fbfbfb;
+  background-color: #f25d50;
+  border-bottom: 0px solid #f25d50;
+}
+.btn-alert:hover {
+  background: #f47368;
+  border-bottom: 8px solid #e52211;
+  transform: translate(0, -8px);
+}
+.btn-alert:active {
+  background: #e52211;
+  transform: translate(0, 0px);
+  border-bottom: 0px solid #e52211;
+  transition: all 0.5s;
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.is-disabled {
+  pointer-events: none;
+  cursor: default;
+  background-color: #686c71;
+  opacity: 0.6;
+}
+
+.btnGroup__SOCIAL {
+  display: inline-block;
+  color: #022873;
+  cursor: pointer;
+}
+.btnGroup__SOCIAL i {
+  padding: 15px;
+}
+.btnGroup__SOCIAL i:hover {
+  color: #77a4fd;
+}
+.btnGroup__SOCIAL i:active {
+  color: black;
+}
+
+/* card */
+.card {
+  width: 100%;
+  background-color: #fbfbfb;
+  border-radius: 8px;
+}
+
+.colorPalette {
+  padding-top: 100%;
+}
+
+h1,
+.h1 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.35em;
+}
+
+h2,
+.h2 {
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.3em;
+}
+
+h3,
+.h3 {
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.2em;
+}
+
+h4,
+.h4 {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1em;
+}
+
+h5,
+.h5 {
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1em;
+}
+
+h6,
+.h6 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1em;
+}
+
+.para {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 64px;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.11) 0px 4px 6px, rgba(0, 0, 0, 0.8) 0px 1px 3px;
+}
+.navbar .navbar__logo {
+  align-self: center;
+  background-image: url(../img/logo-fotor-bg-remover-2023121421312.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 0%;
+  margin-left: 16px;
+  width: 64px;
+  height: 64px;
+  white-space: nowrap;
+  text-indent: 100%;
+  overflow: hidden;
+}
+.navbar .navbar__search-group {
+  align-self: center;
+}
+.navbar .navbar__search-group .navbar__search {
+  width: 10em;
+  height: 32px;
+  display: inline-flex;
+  align-self: center;
+  margin-right: 8px;
+  border-radius: 4px;
+}
+.navbar .btn__order {
+  align-self: center;
+  margin: 0;
+}
+.navbar .navbar__nav .nav__item {
+  display: inline-flex;
+}
+.navbar .navbar__nav .nav__item .nav__link {
+  display: block;
+  color: #40414f;
+  padding: 20px 16px;
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.navbar .navbar__nav .nav__item .nav__link:hover {
+  color: #f24405;
+}
+
+.jumbotron {
+  padding-top: 320px;
+  padding-bottom: 240px;
+  background-image: url(../img/BTN\ R角失效.PNG);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+.jumbotron--text-center {
+  text-align: center;
+}
+
+.text-range {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 25%;
+  height: 25%;
+  border-radius: 8px;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 8px;
+}
+.card .img-container::before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 75%;
+  background-color: rgb(62, 207, 142);
+}
+.card .img-container .image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card__body {
+  padding: 0 16px;
+}
+.card__body .card__title {
+  font-size: 25px;
+  margin: 16px 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.card__body .card__title .price {
+  color: #f25d50;
+}
+.card__body .card__para {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 16px;
+  line-height: 32px;
+  height: 64px;
+  overflow: hidden;
+}
+
+.footer {
+  border: 1px solid black;
+  padding-top: 90px;
+  box-shadow: rgba(50, 50, 93, 0.11) 0px -4px 6px;
+  background-color: #022873;
+  color: #f3f4f5;
+}
+.footer .btnGroup__SOCIAL {
+  color: #f2bb13;
+}
+
+.contact__info {
+  margin-bottom: 24px;
+}
+.contact__info .contact-info__item {
+  padding-left: 32px;
+  margin-bottom: 8px;
+}
+.contact__info .contact-info__item i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.contact__info .footer__info .footer__link {
+  color: #f3f4f5;
+}
+
+.footer {
+  border-bottom: 1px solid black;
+}
+.footer .navbar {
+  background-color: #022873;
+  box-shadow: none;
+}
+.footer .navbar .nav__item .nav__link {
+  color: #f3f4f5;
+}
+.footer .copyright {
+  border-top: 1px solid #b2bac4;
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 32px;
+  padding-bottom: 24px;
+}
+.footer .copyright .copyright__text {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/* -------------------------- *\
+	Pages
+\* -------------------------- */
+/* homepage */
+/* about */
+/* -------------------------- *\
+	Utility
+\* -------------------------- */
+.clearfix {
+  clear: both;
+}/*# sourceMappingURL=style.css.map */
