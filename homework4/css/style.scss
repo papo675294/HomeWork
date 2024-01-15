@@ -1,0 +1,529 @@
+/* 若你有使用到中文需要的編碼宣告 */
+@charset "utf-8";
+
+/* 文件開頭說明 */
+/*
+ * Page name
+ * Copyright 2020
+ * Author
+ * Licensed
+*/
+
+/* 目錄、區段的註解 */
+/* -------------------------- *\
+	Content
+\* -------------------------- */
+/**
+ * Content .............. You are reading it!
+ * Global .............. Set common styles
+ * Layout .............. Set grid
+ * Components .............. Set components styles
+ * Pages .............. Set different page styles
+ * Utility .............. Set utility tools
+ */
+
+/* -------------------------- *\
+	Global
+\* -------------------------- */
+
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  outline: none;
+}
+body {
+  font-family: "微軟正黑體";
+}
+// /變數顏色/
+$bgc--default: #f3f4f5;
+$bgc--primary: #022873;
+$bgc--secondary: #f2bb13;
+
+$bgc--positive: #f2a516;
+$bgc--negative: #f24405;
+$bgc--alert: #f25d50;
+
+//中性色
+$bgc--black: #151730;
+$bgc--dark-grey-1: #40414f;
+$bgc--dark-grey-2: #686c71;
+$bgc--light-grey-1: #b2bac4;
+$bgc--light-grey-2: #dadfe4;
+$bgc--white: #fbfbfb;
+
+//color
+$color--default: #f3f4f5;
+$color--primary: #022873;
+$color--secondary: #f2bb13;
+
+$color--positive: #f2a516;
+$color--negative: #f24405;
+$color--alert: #f25d50;
+
+//中性色
+$color--black: #151730;
+$color--dark-grey-1: #40414f;
+$color--dark-grey-2: #686c71;
+$color--light-grey-1: #b2bac4;
+$color--light-grey-2: #dadfe4;
+$color--white: #fbfbfb;
+
+$color-array: (
+  default: $bgc--default,
+  primary: $bgc--primary,
+  secondary: $bgc--secondary,
+  positive: $bgc--positive,
+  negative: $bgc--negative,
+  alert: $bgc--alert,
+  dark: $bgc--black,
+  dark-grey-1: $bgc--dark-grey-1,
+  dark-grey-2: $bgc--dark-grey-2,
+  light-grey-1: $bgc--light-grey-1,
+  light-grey-2: $bgc--light-grey-2,
+  pure-white: $bgc--white,
+);
+
+.hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  &-grey {
+    background-color: $bgc--light-grey-2;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+/* -------------------------- *\
+	Components
+\* -------------------------- */
+// btn
+.btn {
+  display: inline-block;
+  padding: 16px 20px;
+  // border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: $color--primary;
+  background-color: $bgc--secondary;
+  transition: all 0.3s;
+  &:hover {
+    color: $color--secondary;
+    background-color: $bgc--primary;
+  }
+  &-md {
+    padding: 10px 10px;
+    font-size: 12px;
+  }
+}
+
+//image
+.image-content {
+  width: 100%;
+  &::before {
+    content: "";
+    width: 100%;
+    display: block;
+    padding-top: 75%;
+  }
+  .img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 16px;
+  // border: 1px solid black;
+  background-color: rgba($bgc--primary, 0.5);
+  .navbar__logo {
+    display: inline-block;
+    // border: 1px solid black;
+    background-image: url(../img/logo-white.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    //隱藏文字，優化SEO
+    text-indent: 100%;
+    overflow: hidden;
+  }
+  .navbar__nav {
+    // border: 1px solid brown;
+
+    .nav__item {
+      display: inline-block;
+      vertical-align: top;
+      height: 64px;
+      line-height: 64px;
+      border-radius: 4px;
+      margin-left: 16px;
+      // border: 1px solid bisque;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 5px;
+        background-color: $bgc--secondary;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transition: all 0.3s;
+      }
+      &:hover {
+        &::after {
+          width: 100%;
+          height: 2px;
+        }
+      }
+      .nav__link {
+        font-size: 20px;
+        display: inline-block;
+        vertical-align: top;
+        color: $color--secondary;
+        font-weight: 600;
+      }
+    }
+  }
+  label,
+  input {
+    display: none;
+  }
+  label {
+    position: absolute;
+    right: 16px;
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    .navbar__nav {
+      display: none;
+    }
+    label {
+      display: block;
+    }
+    #burger:checked + ul {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 0;
+      top: 28px;
+      z-index: 500;
+      background-color: rgba($bgc--primary, 0.5);
+      text-align: center;
+    }
+  }
+}
+
+.jumbotron-item {
+  .jumbotron-item__image {
+    width: 100%;
+    height: 75vh;
+    // border: 1px solid black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .jumbotron-item_content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .jumbotron-item__title {
+      font-size: 48px;
+      font-weight: 600;
+      color: $color--light-grey-2;
+      margin-bottom: 32px;
+      line-height: 1.2;
+    }
+    .jumbotron-item__para {
+      font-size: 20px;
+      font-weight: 400;
+      color: $bgc--light-grey-2;
+      margin-bottom: 32px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .jumbotron-item {
+    .jumbotron-item_content {
+      .jumbotron-item__title {
+        font-size: 36px;
+        font-weight: 600;
+        color: $color--light-grey-2;
+        margin-bottom: 24px;
+        line-height: 1.2;
+      }
+      .jumbotron-item__para {
+        font-size: 16px;
+        font-weight: 400;
+        color: $bgc--light-grey-2;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+.owl-theme {
+  .owl-nav {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    button.owl-prev,
+    button.owl-next {
+      width: 24px;
+      height: 64px;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.5;
+      transition: all 0.3s;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    button.owl-prev {
+      left: 16px;
+      background-image: url(../img/common/back.svg);
+    }
+    button.owl-next {
+      right: 16px;
+      background-image: url(../img/common/next.svg);
+    }
+  }
+}
+
+// 從網頁開發人員選項中，找到插件預設的class名稱，進行撰寫
+.owl-theme {
+  .owl-dots {
+    height: 8px;
+    width: 100px;
+
+    // border: 1px solid wheat;
+    // 定位置圖片下方
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    // 使裡面的物件，置中
+    display: flex;
+    justify-content: center;
+    .owl-dot {
+      // border: 1px solid red;
+      width: 48px;
+      height: 10px;
+      margin: 0 4px;
+      // 這邊的高度是預設點擊範圍，實際按鈕由偽元素完成
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        // 寬度100%是根據上一層的寬度
+        width: 100%;
+        height: 2px;
+        background-color: $bgc--default;
+        transition: all 0.3s;
+      }
+      &.active {
+        &::after {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+// about
+
+.about-content {
+  .about-title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    margin-top: 80px;
+  }
+  .about-para {
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .about-content {
+    .about-title {
+      font-size: 30px;
+      font-weight: 600;
+      margin-bottom: 32px;
+      margin-top: 40px;
+    }
+    .about-para {
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+//test
+.test {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  .test-title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
+  .test-para {
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+
+//mean
+.mean-content {
+  text-align: center;
+  margin-top: 16px;
+  .mean-title {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    color: $color--dark-grey-1;
+  }
+  .mean-para {
+    font-size: 20px;
+    color: $color--dark-grey-1;
+  }
+}
+
+.mean-image {
+  width: 100%;
+  // border: 1px solid black;
+  height: 75%;
+  border-radius: 50%;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    width: 100%;
+    padding-top: 100%;
+    display: block;
+  }
+  .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+// explain
+.explain {
+  .explain-content {
+    .explain-para {
+      font-size: 20px;
+      line-height: 1.5;
+      color: $color--dark-grey-1;
+      margin-bottom: 16px;
+    }
+    .explain-ul {
+      margin-top: 24px;
+      .explain-li {
+        margin-bottom: 16px;
+        color: $color--dark-grey-1;
+        font-size: 16px;
+      }
+    }
+  }
+  .img {
+    border-radius: 25px;
+    background-color: #4158d0;
+    background-image: linear-gradient(
+      43deg,
+      #4158d0 0%,
+      #c850c0 46%,
+      #ffcc70 100%
+    );
+  }
+}
+@media screen and (max-width: 768px) {
+  .explain {
+    .image-content {
+      margin-bottom: 16px;
+    }
+    .explain-content {
+      .explain-para {
+        font-size: 16px;
+        line-height: 2;
+      }
+    }
+  }
+}
+
+//footer
+.footer-content {
+  text-align: center;
+  .footer-para {
+    font-size: 20px;
+    color: $color--dark-grey-1;
+    margin-bottom: 16px;
+  }
+  input {
+    border: 1px solid sandybrown;
+    width: 25vh;
+    height: 25px;
+  }
+}
+.copyright {
+  text-align: center;
+  padding: 16px 0;
+  background-color: rgba($bgc--primary, 0.5);
+  color: $color--secondary;
+}
+/* -------------------------- *\
+	Utility
+\* -------------------------- */
+// 因為這個class會使左右兩側留白，故額外單獨寫
+.owl-drag {
+  padding: 0;
+}
